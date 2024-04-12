@@ -136,7 +136,7 @@ class SudokuGenerator:
     def fill_diagonal(self):
     # fills the boxes along the diagonal
         for i in range(0,7,3):
-            fill_box(i,i)
+            self.fill_box(i,i)
 
 
 
