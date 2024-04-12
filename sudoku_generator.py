@@ -108,8 +108,22 @@ class SudokuGenerator:
 
 	Return: None
     '''
+
     def fill_box(self, row_start, col_start):
-        pass
+
+        box_values = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        for row in range(row_start, row_start+3):
+            for col in range(col_start, col_start+3):
+
+                #This pops an element from the box_values list, and then assigns the popped value as a digit.
+                #This will also prevent the same number from being used again.
+                random_index = random.randint(0, len(box_values)-1)
+                digit = box_values.pop(random_index)
+
+                self.board[row][col] = digit
+
+
     
     '''
     Fills the three boxes along the main diagonal of the board
@@ -118,8 +132,13 @@ class SudokuGenerator:
 	Parameters: None
 	Return: None
     '''
+
     def fill_diagonal(self):
-        pass
+    #fills the boxes along the diagonal
+    for i in range(0,7,3):
+        fill_box(i,i)
+
+
 
     '''
     DO NOT CHANGE
